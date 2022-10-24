@@ -36,11 +36,11 @@ function App() {
 
   //update todo in firebase
 
-  // const toggleComplete = async (todo) => {
-  //   await updateDoc(doc(db, 'todos', todo.id),{
-  //     completed: !todo.completed
-  //   })
-  // }
+  const toggleComplete = async (todo) => {
+    await updateDoc(doc(db, 'todos', todo.id),{
+      completed: !todo.completed
+    })
+  }
 
   //delete todo from firebase
 
