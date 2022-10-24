@@ -3,7 +3,7 @@ import { AiOutlinePlus } from "react-icons/ai";
 import Todo from './Todo.jsx'
 import { useEffect, useState } from "react"
 import { db } from './firebase'
-import { query, collection, onSnapshot, QuerySnapshot, updateDoc, doc, addDoc, deleteDoc } from "firebase/firestore"
+import { query, collection, onSnapshot, updateDoc, doc, addDoc, deleteDoc } from "firebase/firestore"
 
 const style = {
   bg: `h-screen w-screen p-4 bg-gradient-to-r from-[#2F80ED] to-[#1CB5E0]`,
@@ -63,7 +63,7 @@ function App() {
     await deleteDoc(doc(db, 'todos', id))
   }
 
-
+console.log(process.env.REACT_APP_API_KEY)
 
   return (
     <div className={style.bg}>
@@ -81,7 +81,7 @@ function App() {
             <Todo key={index} todo={todo} toggleComplete={toggleComplete} deleteTodo={deleteTodo} />
           ))}
         </ul>
-        {todos.length < 1 ? '' : <p className={style.count}>{`You have ${todos.length} ${todos.length == 1 ? 'todo' : 'todos'}`}</p>}
+        {todos.length < 1 ? '' : <p className={style.count}>{`You have ${todos.length} ${todos.length === 1 ? 'todo' : 'todos'}`}</p>}
 
       </div>
     </div>

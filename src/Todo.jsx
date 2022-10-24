@@ -18,6 +18,7 @@ const Todo = ({todo, toggleComplete, deleteTodo}) => {
             <p onClick={()=>toggleComplete(todo)} className={todo.completed ? styles.textComplete : styles.text}>{todo.text}</p>
         </div>
         <button onClick={()=>deleteTodo(todo.id)}>{<FaRegTrashAlt/>}</button>
+        
     </li>
   )
 }
